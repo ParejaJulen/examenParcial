@@ -20,7 +20,7 @@ class ExamenKataTest extends TestCase
      */
     public function givenOneItemReturnItem()
     {
-        $result = $this->kata->addItem('pan');
+        $result = $this->kata->manageList('añadir pan');
 
         $this->assertEquals('pan', $result);
     }
@@ -29,9 +29,9 @@ class ExamenKataTest extends TestCase
      */
     public function givenManyItemsReturnList()
     {
-        $this->kata->addItem('pan');
-        $this->kata->addItem('leche');
-        $result = $this->kata->addItem('agua');
+        $this->kata->manageList('añadir pan');
+        $this->kata->manageList('añadir leche');
+        $result = $this->kata->manageList('añadir agua');
 
         $this->assertEquals('agua,leche,pan', $result);
     }
