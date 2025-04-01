@@ -18,11 +18,11 @@ class ExamenKataTest extends TestCase
     /**
      * @test
      */
-    public function givenTwoNumbersReturnSum()
+    public function givenOneItemReturnItem()
     {
-        $result = $this->kata->ejemplo(1, 2);
+        $result = $this->kata->addItem('pan');
 
-        $this->assertEquals(3, $result);
+        $this->assertEquals('pan', $result);
     }
 
     /**
