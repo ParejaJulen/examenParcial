@@ -24,16 +24,16 @@ class ExamenKataTest extends TestCase
 
         $this->assertEquals('pan', $result);
     }
-
     /**
      * @test
      */
-    public function givenNegativeNumberThrowException()
+    public function givenManyItemsReturnList()
     {
-        $this->expectException(\Exception::class);
-        $this->expectExceptionMessage('Negativos no soportados');
+        $result = $this->kata->addItem('pan');
+        $result = $this->kata->addItem('leche');
+        $result = $this->kata->addItem('agua');
 
-        $this->kata->ejemplo(2, -1);
+        $this->assertEquals('agua,leche,pan', $result);
     }
 
 }
