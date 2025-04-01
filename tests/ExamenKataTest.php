@@ -29,11 +29,22 @@ class ExamenKataTest extends TestCase
      */
     public function givenManyItemsReturnList()
     {
-        $result = $this->kata->addItem('pan');
-        $result = $this->kata->addItem('leche');
+        $this->kata->addItem('pan');
+        $this->kata->addItem('leche');
         $result = $this->kata->addItem('agua');
 
         $this->assertEquals('agua,leche,pan', $result);
+    }
+
+    /**
+     * @test
+     */
+    public function deleteItemFromListContainingItem()
+    {
+        $this->kata->addItem('pan');
+        $result = $this->kata->deleteItem('pan');
+
+        $this->assertEquals('', $result);
     }
 
 }
