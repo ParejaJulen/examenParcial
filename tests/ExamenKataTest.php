@@ -47,4 +47,15 @@ class ExamenKataTest extends TestCase
         $this->assertEquals('', $result);
     }
 
+    /**
+     * @test
+     */
+    public function deleteItemFromListNotContainingItem()
+    {
+        $this->kata->addItem('pan');
+        $result = $this->kata->deleteItem('agua');
+
+        $this->assertEquals('El producto seleccionado no existe', $result);
+    }
+
 }
